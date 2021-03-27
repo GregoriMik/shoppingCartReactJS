@@ -1,7 +1,7 @@
 class App extends React.Component{
   state = {
     availableProducts: 7,
-    shoppingCart: 20,
+    shoppingCart: 2,
   }
   handleRemoveFromCart = () =>{
     this.setState({
@@ -21,7 +21,7 @@ class App extends React.Component{
         onClick={this.handleRemoveFromCart}
         >-</button>
         <span> {this.state.shoppingCart} </span>
-        <button onClick={this.handleAddFromCart}>+</button>
+        <button disabled={this.state.shoppingCart < this.state.availableProducts? false : true}onClick={this.handleAddFromCart}>+</button>
       </>
     )
   }
