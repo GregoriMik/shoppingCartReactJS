@@ -22,7 +22,7 @@ class App extends React.Component{
         >-</button>
         <span> {this.state.shoppingCart} </span>
         <button disabled={this.state.shoppingCart < this.state.availableProducts? false : true}onClick={this.handleAddFromCart}>+</button>
-        <button>Kup</button>
+        {this.state.shoppingCart>0 && <button>Kup</button>}
       </div>
     )
   }
