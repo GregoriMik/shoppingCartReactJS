@@ -1,8 +1,9 @@
-/* *{
+*{
     box-sizing:border-box;
     margin:0;
     padding:0;
-} */
+    min-width:500px;
+}
 
 div {
     line-height: 50px;
@@ -10,11 +11,12 @@ div {
     font-family: arial;
 }
 button{
+    margin:0 10px;
     background-color: #fff;
     border: 2px solid black;
     font-weight: bold;
     font-size: 30px;
-    width: 50px;
+    min-width: 50px;
     height:50px;
     cursor:pointer;
     outline:none;
