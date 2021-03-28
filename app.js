@@ -2,6 +2,14 @@ class App extends React.Component{
   state = {
     availableProducts: 7,
     shoppingCart: 1,
+    shoppingTxt:"Kup"
+  }
+  handleBuy = () =>{
+    this.setState({
+      availableProducts: this.state.availableProducts - this.state.shoppingCart,
+      shoppingCart: 0
+    })
+    // console.log("Kupione!")
   }
   handleRemoveFromCart = () =>{
     this.setState({
@@ -15,14 +23,17 @@ class App extends React.Component{
     })
   }
   render() {
+
+    // const style= this.state.shoppingCart === 0?{opacity:0.3}:{};// drugi zapis potem w spanie odwołujemy się "{style}";
     return(
       <div>
         <button disabled={this.state.shoppingCart===0? true : false} 
         onClick={this.handleRemoveFromCart}
         >-</button>
-        <span> {this.state.shoppingCart} </span>
+        <span style={this.state.shoppingCart===0? { opacity: 0.3 }:{}}> {this.state.shoppingCart} </span>
         <button disabled={this.state.shoppingCart < this.state.availableProducts? false : true}onClick={this.handleAddFromCart}>+</button>
-        {this.state.shoppingCart>0 && <button>Kup</button>}
+        {this.state.shoppingCart>0 && <button onClick={this.handleBuy}>Kup</button>}
+        {/* {this.state.shoppingCart>0 && this.state.shoppingTxt} */}
       </div>
     )
   }
