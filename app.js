@@ -23,7 +23,7 @@ class App extends React.Component{
     })
   }
   render() {
-
+    // const {shoppingCart, availableProducts}= this.state po zastosowaniu tej stałej można usunąć wszystkie fragmenty this.state
     // const style= this.state.shoppingCart === 0?{opacity:0.3}:{};// drugi zapis potem w spanie odwołujemy się "{style}";
     return(
       <div>
